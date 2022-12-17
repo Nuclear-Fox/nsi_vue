@@ -1,0 +1,9 @@
+span {
+    float: right;
+    overflow: hidden;
+}
+
+.line {
+    height: 0.3em;
+    border-bottom: 0.1em solid #BCBCBC;
+}

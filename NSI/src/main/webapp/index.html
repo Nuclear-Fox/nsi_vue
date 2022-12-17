@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Справка</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles/table.css">
+        <link rel="stylesheet" href="styles/window.css">
+        <link rel="stylesheet" href="styles/styles.css">
+        
+    </head>
+    <body>
+        
+        <div id="page">
+            
+            <h1> {{header}} </h1>
+            
+            
+        </div>
+        
+        <div id="tableFill">
+                <table class="table">
+                    <thead>
+                        <tr>
+                          <!-- loop through each value of the fields to get the table header -->
+                            <th  v-for="field in fields" v-bind:id="field.id"> {{field.name}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Loop through the list get the each student data -->
+                        <tr v-for="item in list">
+                            <td v-for="field in fields" v-bind:label="field.name">{{item[field.id]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+        <script src="scripts/main.js"></script>
+        
+    </body>
+</html>
